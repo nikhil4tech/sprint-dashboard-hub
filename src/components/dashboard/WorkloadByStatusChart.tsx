@@ -1,5 +1,5 @@
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
@@ -32,11 +32,11 @@ export function WorkloadByStatusChart() {
               <XAxis dataKey="status" />
               <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar 
-                dataKey="count" 
-                fill={(entry) => entry.color || "var(--color-count)"} 
-                radius={[4, 4, 0, 0]}
-              />
+              <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                {statusData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </ChartContainer>
