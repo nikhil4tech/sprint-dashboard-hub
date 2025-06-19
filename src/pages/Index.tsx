@@ -1,8 +1,9 @@
+
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { ProjectGrid } from "@/components/dashboard/ProjectGrid";
-import { ActivityFeed } from "@/components/dashboard/ActivityFeed";
+import { ProjectGanttChart } from "@/components/dashboard/ProjectGanttChart";
 import { QuickStats } from "@/components/dashboard/QuickStats";
 import { TasksPerProjectChart } from "@/components/dashboard/TasksPerProjectChart";
 import { WorkloadByStatusChart } from "@/components/dashboard/WorkloadByStatusChart";
@@ -27,7 +28,7 @@ const Index = () => {
                   <ProjectGrid />
                 </div>
                 <div className="xl:col-span-1">
-                  <ActivityFeed />
+                  <ProjectGanttChart />
                 </div>
               </div>
 
